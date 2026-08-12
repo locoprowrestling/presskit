@@ -36,24 +36,26 @@ Source library: `/Volumes/LaCie 2TB/locoprowrestling/characterCreator/CMR`.
 Web copies are resized to 1400 px wide; the print copies in `downloads/press-photos-print/`
 are the untouched 2048 px originals.
 
-## Delete `_roster-review/` before deploy
+## Finding a photo of a wrestler
 
-`_roster-review/` is working material from the photo identification pass: 66 numbered
-candidates, the contact sheets, and Aaron's answer files. It is 12 MB and must not ship.
-Delete it, or exclude it, before the first push.
+**Query the photo tagger. Do not start an identification pass.**
 
-The identifications it produced are preserved permanently in
-`/Volumes/LaCie 2TB/locoprowrestling/.knowledgebase/operations/cmr-photo-identifications.md`,
-so deleting the folder loses nothing.
+`/Volumes/LaCie 2TB/locoprowrestling/characterCreator/photo-tagger/tags.json` maps every
+tagged CMR photo to the wrestlers in it, using the 38 canonical tokens in `roster.json`.
+`captions.json` alongside it adds match context for 114 photos.
 
-## Roster photo identification
+```sh
+cd "/Volumes/LaCie 2TB/locoprowrestling/characterCreator/photo-tagger"
+python3 -c "import json;t=json.load(open('tags.json'));print([k for k,v in t.items() if 'Johnny Crash' in (v or [])][:10])"
+```
 
-Nobody had recorded which CMRice photo shows which wrestler. Aaron identified 66 of them
-during this build. Before adding any new roster photo, read
-`cmr-photo-identifications.md` first, and note its rule: trunks and ring gear are
-generally reliable for identity, shirts are not (Franky Gonzales and Michael Avalon
-swapped shirts at Vendetta as a storyline beat), and masks are not (Anuka Gutierrez wore
-the Nicky Hyde mask at Battle).
+This repo's roster photos were selected before that tagger was found, which cost Aaron
+three rounds of manual identification for answers that already existed. Do not repeat it.
+Background: `.knowledgebase/operations/cmr-photo-identifications.md`.
+
+Identity cues, from that same doc: trunks and ring gear are generally reliable, shirts are
+not (Franky Gonzales and Michael Avalon swapped shirts at Vendetta as a storyline beat),
+and masks are not (Anuka Gutierrez wore the Nicky Hyde mask at Battle).
 
 ## Do not use the illustrated roster art
 
