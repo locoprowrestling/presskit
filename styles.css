@@ -43,6 +43,14 @@ h1, h2, h3 { font-family: "Bebas Neue", "Oswald", sans-serif; font-weight: 400; 
 .hero-lede { font-size: 1.2rem; max-width: 46ch; color: var(--text); margin: 0 0 2rem; }
 .hero-contact { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
 .hero-note { font-size: .9rem; color: var(--muted); margin: 0; }
+.section-nav { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; margin-top: 1.5rem; }
+.recap-photo { margin: 0; }
+.recap-photo img { display: block; width: 100%; height: auto; }
+.recap-photo figcaption { font-size: .8rem; color: var(--muted); margin-top: .6rem; }
+.recap-list { padding-left: 1.2rem; }
+.recap-list li { margin-bottom: .6rem; }
+.new-arrivals-heading { margin: 2rem 0 1rem; font-size: 1.7rem; }
+.roster-text { margin-bottom: 1.5rem; }
 
 .btn { display: inline-block; font-family: "Oswald", sans-serif; text-transform: uppercase; letter-spacing: .1em; font-size: .82rem; padding: .7rem 1.3rem; border: 1px solid var(--line); border-radius: 2px; color: var(--text); background: var(--panel); }
 .btn:hover { border-color: var(--gold); color: var(--white); }
@@ -86,6 +94,7 @@ h1, h2, h3 { font-family: "Bebas Neue", "Oswald", sans-serif; font-weight: 400; 
 .roster article a { display: block; border: 0; }
 .roster article img { width: 100%; height: 260px; object-fit: cover; object-position: center 22%; display: block; transition: opacity .18s ease; }
 .roster article a:hover img { opacity: .82; }
+.roster article img.laststand-portrait { height: auto; }
 .roster h3 { font-size: 1.5rem; color: var(--gold); margin: 1rem 1.15rem .35rem; }
 .roster p { margin: 0 1.15rem 1.15rem; font-size: .9rem; color: var(--muted); }
 .credit-note { margin-top: 1.25rem !important; margin-bottom: 0 !important; font-size: .85rem; }
@@ -133,7 +142,7 @@ h1, h2, h3 { font-family: "Bebas Neue", "Oswald", sans-serif; font-weight: 400; 
   body { background: #fff; color: #111; font-size: 10.5pt; line-height: 1.4; }
   a { color: #111; border: 0; text-decoration: none; }
   .nav, .hero-contact, .hero-note, #story, #roster, #video, #photos, #downloads,
-  .footer-social, .pull, .showcard-poster { display: none; }
+  .footer-social, .pull, .showcard-poster, #last-stand, .section-nav { display: none; }
   .hero { border: 0; background: #fff; }
   .hero-inner { padding: 0 0 .12in; }
   .hero h1 { font-size: 26pt; color: #111; line-height: 1; margin-bottom: .06in; }
